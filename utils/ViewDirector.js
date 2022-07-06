@@ -1,20 +1,24 @@
 import PropTypes from 'prop-types';
 import { useAuth } from './context/authContext';
 import Loading from '../components/Loading';
+import Signin from '../components/Signin';
 
 const ViewDirectorBasedOnUserAuthStatus = ({ component: Component, pageProps }) => {
-  const { userLoading } = useAuth();
+    const { user, userLoading } = useAuth();
+    if (userLoading) {
+      return <Loading />;
+    }
 
-  if (userLoading) {
-    return <Loading />;
-  }
+    if (user) {
+      return (
+        <div className="container">
+          <Component {...pageProps} />
+        </div>
+      );
+    }
 
-  return (
-    <div className="container">
-      <Component {...pageProps} />
-    </div>
-  );
-};
+    return <Signin/>;
+}
 
 export default ViewDirectorBasedOnUserAuthStatus;
 
