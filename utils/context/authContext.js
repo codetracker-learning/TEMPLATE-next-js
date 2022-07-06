@@ -1,0 +1,50 @@
+// Context API Docs: https://beta.reactjs.org/learn/passing-data-deeply-with-context
+
+import React, {
+  createContext,
+  useContext,
+  useEffect,
+  useMemo,
+  useState,
+} from 'react';
+import { firebase } from '../client';
+
+const AuthContext = createContext();
+
+AuthContext.displayName = 'AuthContext'; // Context object accepts a displayName string property. React DevTools uses this string to determine what to display for the context. https://reactjs.org/docs/context.html#contextdisplayname
+
+const AuthProvider = (props) => {
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    firebase.auth().onAuthStateChanged((fbUser) => {
+      if (fbUser) {
+        setUser(fbUser);
+      } else {
+        setUser(false);
+      }
+    }); // creates a single global listner for auth state changed
+  }, []);
+
+  const value = useMemo( // https://reactjs.org/docs/hooks-reference.html#usememo
+    () => ({
+      user,
+      userLoading: user === null,
+    }),
+    [user],
+  );
+
+  return <AuthContext.Provider value={value} {...props} />;
+};
+const AuthConsumer = AuthContext.Consumer;
+
+const useAuth = () => {
+  const context = useContext(AuthContext);
+
+  if (context === undefined) {
+    throw new Error('useAuth must be used within a AuthProvider');
+  }
+  return context;
+};
+
+export { AuthProvider, useAuth, AuthConsumer };
