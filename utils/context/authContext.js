@@ -23,7 +23,7 @@ const AuthProvider = (props) => {
       } else {
         setUser(false);
       }
-    }); // creates a single global listner for auth state changed
+    }); // creates a single global listener for auth state changed
   }, []);
 
   const value = useMemo( // https://reactjs.org/docs/hooks-reference.html#usememo
