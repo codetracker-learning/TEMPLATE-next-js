@@ -4,21 +4,21 @@ import Loading from '../components/Loading';
 import Signin from '../components/Signin';
 
 const ViewDirectorBasedOnUserAuthStatus = ({ component: Component, pageProps }) => {
-    const { user, userLoading } = useAuth();
-    if (userLoading) {
-      return <Loading />;
-    }
+  const { user, userLoading } = useAuth();
+  if (userLoading) {
+    return <Loading />;
+  }
 
-    if (user) {
-      return (
-        <div className="container">
-          <Component {...pageProps} />
-        </div>
-      );
-    }
+  if (user) {
+    return (
+      <div className="container">
+        <Component {...pageProps} />
+      </div>
+    );
+  }
 
-    return <Signin/>;
-}
+  return <Signin />;
+};
 
 export default ViewDirectorBasedOnUserAuthStatus;
 
