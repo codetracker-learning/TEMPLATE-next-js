@@ -29,7 +29,7 @@ const AuthProvider = (props) => {
   const value = useMemo( // https://reactjs.org/docs/hooks-reference.html#usememo
     () => ({
       user,
-      userLoading: user === null,
+      userLoading: user === null, // as long as user === null, will be true. As soon as the user value !== null, value will be false
     }),
     [user],
   );
