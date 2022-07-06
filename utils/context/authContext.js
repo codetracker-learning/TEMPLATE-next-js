@@ -16,6 +16,11 @@ AuthContext.displayName = 'AuthContext'; // Context object accepts a displayName
 const AuthProvider = (props) => {
   const [user, setUser] = useState(null);
 
+  // there are 3 states for the user:
+  // null = application initial state, not yet loaded
+  // false = user is not logged in, but the app has loaded
+  // an object/value = user is logged in
+
   useEffect(() => {
     firebase.auth().onAuthStateChanged((fbUser) => {
       if (fbUser) {
@@ -29,7 +34,9 @@ const AuthProvider = (props) => {
   const value = useMemo( // https://reactjs.org/docs/hooks-reference.html#usememo
     () => ({
       user,
-      userLoading: user === null, // as long as user === null, will be true. As soon as the user value !== null, value will be false
+      userLoading: user === null,
+      // as long as user === null, will be true
+      // As soon as the user value !== null, value will be false
     }),
     [user],
   );
