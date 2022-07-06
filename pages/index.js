@@ -1,18 +1,9 @@
-import { useRouter } from 'next/router';
-import { useEffect } from 'react';
 import { Button } from 'react-bootstrap';
 import { signOut } from '../utils/auth';
 import { useAuth } from '../utils/context/authContext';
 
 function Home() {
   const { user } = useAuth();
-  const router = useRouter();
-
-  useEffect(() => {
-    if (!user) {
-      router.push('/signIn');
-    }
-  }, [user]);
 
   return (
     <div
