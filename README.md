@@ -33,14 +33,13 @@ ___
 ### If you see this, you are set to go!
 <img width="510" alt="Screen Shot 2022-07-09 at 11 29 54 AM" src="https://user-images.githubusercontent.com/31781724/178114566-b2a67164-a604-4e10-9430-4c3054e2d8ab.png">
 
-
-
 You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
 
 **NOTES:** 
 - If you ever see the following error, you did not follow all the setup steps correctly and failed to add your Firebase creds. Go back and do that NOW.
 
-<img width="1043" alt="Screen Shot 2022-07-06 at 11 18 45 AM" src="https://user-images.githubusercontent.com/29741570/177612501-c2628f18-4bbd-4de9-aae6-27ffba1172d6.png">
+<img width="895" alt="Screen Shot 2022-07-09 at 11 32 13 AM" src="https://user-images.githubusercontent.com/31781724/178114663-ba030918-23d7-4491-921b-227ed3190e16.png">
+
 
 ### Using Axios
 > For every file you will need to make an XHR request in, you will need to require Axios
