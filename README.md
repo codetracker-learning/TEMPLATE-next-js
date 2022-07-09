@@ -20,10 +20,6 @@ ___
 #### 4. Go to the **NEXT** section
 
 ## Starting the Project
-1. Create a Firebase project. Use [these videos](https://vimeo.com/showcase/codetracker-firebase) as a refresher if needed.
-1. Create a `.env` file at the root of the project
-1. Copy/Paste the contents of the `.env.sample` file to your newly created `.env` file.
-1. Copy over all of your Firebase values into the `.env` file.
 1. Open the `package.json` file and change the `name` property to the name of your application, and `author` to  your name.
 1. From your command line, be in the root directory and run `npm install` OR `npm i` for short.
 1. Next, run `npm run prepare`. This command sets up husky to track eslint errors on commit that will make your deploy fail on Netlify.
@@ -34,12 +30,6 @@ ___
 <img width="510" alt="Screen Shot 2022-07-09 at 11 29 54 AM" src="https://user-images.githubusercontent.com/31781724/178114566-b2a67164-a604-4e10-9430-4c3054e2d8ab.png">
 
 You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-**NOTES:** 
-- If you ever see the following error, you did not follow all the setup steps correctly and failed to add your Firebase creds. Go back and do that NOW.
-
-<img width="895" alt="Screen Shot 2022-07-09 at 11 32 13 AM" src="https://user-images.githubusercontent.com/31781724/178114663-ba030918-23d7-4491-921b-227ed3190e16.png">
-
 
 ### Using Axios
 > For every file you will need to make an XHR request in, you will need to require Axios
