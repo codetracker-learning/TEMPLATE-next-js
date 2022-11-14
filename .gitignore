@@ -40,3 +40,5 @@ yarn-error.log*
 
 # firebase
 .firebase/
+
+.tool-versions
