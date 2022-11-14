@@ -9,8 +9,12 @@ function Signin() {
       style={{
         height: '90vh',
         padding: '30px',
-        maxWidth: '400px',
         margin: '0 auto',
+        zIndex: 1,
+        minHeight: '25rem',
+        width: '100%',
+        minWidth: '30rem',
+        paddingBlock: '0 5rem',
       }}
     >
       <h1>Hi there!</h1>
